@@ -1,0 +1,12 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    h3  Searching for #{searchingBy}
+    .videos
+        each video in videos
+                +videoBlock({
+                    videoFile: video.videoFile,
+                    title: video.title,
+                    views: video.views
+                })
